@@ -16,7 +16,7 @@ execute:
 
 # **Introduction**
 
-The `mtcars` dataset is a classic dataset in R that comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models). We will explore the relationship between **miles per gallon (mpg)** and **horsepower (hp)**.
+The `mtcars` dataset is a classic dataset in R that includes fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models). We will explore the relationship between **miles per gallon (mpg)** and **horsepower (hp)**.
 
 # **Approach**
 
