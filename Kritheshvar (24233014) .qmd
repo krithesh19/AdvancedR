@@ -1,0 +1,54 @@
+---
+title: "Exploring Car Data with mtcars - Adv R Homework1"
+author: "Kritheshvar - 24233014"
+format: 
+  pdf:
+    toc: false
+    number-sections: false
+    code-block-border-left: true
+    code-fold: false
+    include-in-header: 
+      text: |
+        \usepackage{xcolor}
+execute:
+  echo: false  # hides the code
+---
+
+# **Introduction**
+
+The `mtcars` dataset is a classic dataset in R that comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models). We will explore the relationship between **miles per gallon (mpg)** and **horsepower (hp)**.
+
+# **Approach**
+
+We will:
+- Load the built-in `mtcars` dataset.
+- Plot `mpg` against `hp`.
+- Add a trend line for interpretation.
+- Comment on the observed relationship.
+
+# **Descriptive Statistics**
+
+Here are some basic statistics of the key variables:
+
+- **Mean mpg**: *`r mean(mtcars$mpg)`*
+- **Mean hp**: *`r mean(mtcars$hp)`*
+- **Max hp**: *`r max(mtcars$hp)`*
+- **Min mpg**: *`r min(mtcars$mpg)`*
+
+```{r}
+library(ggplot2)
+```
+
+# **Plot**
+
+Below is a scatter plot of `mpg` vs `hp`. We expect an inverse relationship: as horsepower increases, fuel efficiency (mpg) tends to decrease.
+
+```{r}
+ggplot(mtcars, aes(x = hp, y = mpg)) +
+  geom_point(color = "steelblue", size = 2) +
+  geom_smooth(method = "lm", se = FALSE, color = "darkred") +
+  labs(title = "Miles per Gallon vs Horsepower",
+       x = "Horsepower (hp)",
+       y = "Miles per Gallon (mpg)") +
+  theme_minimal()
+```
